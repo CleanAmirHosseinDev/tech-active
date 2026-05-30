@@ -1,6 +1,34 @@
 const { Token } = require("../models");
+const ethers = require("ethers");
 
 module.exports = {
+  nftAnalytics(req, res) {
+    Token.findAll({})
+      .then((tokens) => {
+        const totalNFTs = tokens.length;
+        const walletAddresses = tokens
+          .map((t) => t.address)
+          .filter((address) => address && ethers.utils.isAddress(address));
+
+        // Extract unique wallet addresses
+        const uniqueWalletAddresses = [...new Set(walletAddresses)];
+
+        res.status(200).json({
+          error: false,
+          data: {
+            totalNFTs: totalNFTs,
+            walletAddresses: uniqueWalletAddresses,
+          },
+        });
+      })
+      .catch((error) =>
+        res.status(500).json({
+          error: true,
+          message: error.message || "An error occurred while fetching NFT analytics",
+        })
+      );
+  },
+
   list(req, res) {
     Token.findAll({})
       .then((tokens) =>

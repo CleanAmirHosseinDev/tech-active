@@ -8,6 +8,7 @@ const path = require('path');
 var port = process.env.PORT || 7645;
 
 var transactionRoute = require('./routes/transactions');
+var tokenRoute = require('./routes/token');
 
 
 app.use(bodyParser.json());
@@ -31,6 +32,7 @@ app.get('/campaigns/slugCheck', (req, res) => {
 });
 
 app.use('/transactions',transactionRoute);
+app.use('/token', tokenRoute);
 
 
 
