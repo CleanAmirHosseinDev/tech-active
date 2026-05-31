@@ -30,6 +30,7 @@ import UserSecurity from "../pages/BrandProfile/userSecurity";
 import CompanyProfile from "../pages/BrandProfile/companyProfile";
 import BrandInvoices from "../pages/BrandProfile/brandInvoices";
 import BrandWallet from "../pages/BrandWallet";
+import WalletTest from "../pages/WalletTest";
 
 const routes = () => (
   <Routes>
@@ -60,6 +61,7 @@ const routes = () => (
         <Route path="/dashboard/user/security" element={<UserSecurity />} />
         <Route path="/dashboard/company/profile" element={<CompanyProfile />} />
         <Route path="/dashboard/company/invoices" element={<BrandInvoices />} />
+        <Route path="/dashboard/wallet-test" element={<WalletTest />} />
       </Route>
     </Route>
 
