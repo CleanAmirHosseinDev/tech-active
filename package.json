@@ -78,7 +78,6 @@
         "sass": "^1.55.0",
         "sass-loader": "^13.0.2",
         "sequelize": "^6.35.0",
-        "sqlite3": "^5.1.6",
         "styled-components": "^5.3.6",
         "tailwindcss": "^3.4.1",
         "web-bip39": "^0.0.2",
